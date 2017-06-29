@@ -78,7 +78,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(119, 251);
+			this.label5.Location = new System.Drawing.Point(119, 260);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(90, 13);
 			this.label5.TabIndex = 4;
@@ -87,25 +87,29 @@
 			// textBox1
 			// 
 			this.textBox1.Location = new System.Drawing.Point(49, 192);
+			this.textBox1.Multiline = true;
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(241, 20);
+			this.textBox1.Size = new System.Drawing.Size(241, 56);
 			this.textBox1.TabIndex = 5;
+			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
 			// textBox2
 			// 
-			this.textBox2.Location = new System.Drawing.Point(49, 277);
+			this.textBox2.Location = new System.Drawing.Point(49, 285);
+			this.textBox2.Multiline = true;
 			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(241, 20);
+			this.textBox2.Size = new System.Drawing.Size(241, 55);
 			this.textBox2.TabIndex = 6;
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(134, 349);
+			this.button1.Location = new System.Drawing.Point(134, 359);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 7;
 			this.button1.Text = "GUARDAR";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// dateTimePicker1
 			// 
