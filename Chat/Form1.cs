@@ -18,7 +18,7 @@ namespace Chat
 			InitializeComponent();
 
 			Configuracion conf = new Configuracion();
-			conf.SetUpTimer1(new TimeSpan(15, 46, 00));
+			conf.SetUpTimer1(new TimeSpan(15, 55, 00));
 			conf.SetUpTimer2(new TimeSpan(18, 00, 00));
 
 		}
