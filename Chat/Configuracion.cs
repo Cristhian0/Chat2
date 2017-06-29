@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Lync.Model;
@@ -56,15 +57,29 @@ namespace Chat
 			}
 		}
 
-		private void button1_Click(object sender, EventArgs e)
-		{
 
+		private System.Threading.Timer timer;
+		public void SetUpTimer(TimeSpan alertTime)
+		{
+			DateTime current = DateTime.Now;
+			TimeSpan timeToGo = alertTime - current.TimeOfDay;
+			if (timeToGo < TimeSpan.Zero)
+			{
+				return;//time already passed
+			}
+			this.timer = new System.Threading.Timer(x =>
+			{
+				this.EnviarMensaje();
+			}, null, timeToGo, Timeout.InfiniteTimeSpan);
+		}
+
+		private void EnviarMensaje()
+		{
 			List<string> inviteeList = new List<string>();
 
 			inviteeList.Add("sip:alex.agudelo@accenture.com");
-			//inviteeList.Add("sip:l.restrepo@accenture.com");
 
-			
+
 
 			// Create a generic Dictionary object to contain
 			// conversation setting objects.
@@ -81,8 +96,20 @@ namespace Chat
 		  , null);
 
 			modalitySettings.Add(AutomationModalitySettings.FirstInstantMessage, firstIMMessageText);
-		
+			modalitySettings.Add(AutomationModalitySettings.SendFirstInstantMessageImmediately,
+				true);
+			IAsyncResult er = automation.BeginStartConversation(
+		  chosenMode
+		  , inviteeList
+		  , modalitySettings
+		  , null
+		  , null);
+		}
 
+		private void button1_Click(object sender, EventArgs e)
+		{
+
+			
 
 
 

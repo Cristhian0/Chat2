@@ -8,14 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Chat
 {
     public partial class Form1 : Form
     {
-        public Form1()
-        {
-            InitializeComponent();
-        }
+		public Form1()
+		{
+			InitializeComponent();
+
+			Configuracion conf = new Configuracion();
+			conf.SetUpTimer1(new TimeSpan(15, 46, 00));
+			conf.SetUpTimer2(new TimeSpan(18, 00, 00));
+
+		}
 
 		private void btn_login_Click(object sender, EventArgs e)
 		{
