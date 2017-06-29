@@ -16,5 +16,21 @@ namespace Chat
         {
             InitializeComponent();
         }
-    }
+
+		private void btn_login_Click(object sender, EventArgs e)
+		{
+			login formLogin = new login();
+			formLogin.Show();
+			formLogin.Activate();
+			formLogin.BringToFront();
+		}
+
+		private void Btn_Configuracion_Click(object sender, EventArgs e)
+		{
+			Configuracion vista_confi = new Configuracion();
+			vista_confi.Show();
+			vista_confi.Activate();
+			vista_confi.BringToFront();
+		}
+	}
 }

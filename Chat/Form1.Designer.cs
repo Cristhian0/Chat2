@@ -40,6 +40,7 @@
 			this.btn_login.TabIndex = 0;
 			this.btn_login.Text = "Login";
 			this.btn_login.UseVisualStyleBackColor = true;
+			this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
 			// 
 			// Btn_Configuracion
 			// 
@@ -49,6 +50,7 @@
 			this.Btn_Configuracion.TabIndex = 1;
 			this.Btn_Configuracion.Text = "Configuración";
 			this.Btn_Configuracion.UseVisualStyleBackColor = true;
+			this.Btn_Configuracion.Click += new System.EventHandler(this.Btn_Configuracion_Click);
 			// 
 			// Form1
 			// 
